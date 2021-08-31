@@ -1,0 +1,110 @@
+<resources>
+    <string name="app_name">tzar</string>
+    <string name="title_home">Home</string>
+    <string name="title_map">Map</string>
+    <string name="title_ride">Ride</string>
+    <string name="title_pay">Пополнить</string>
+
+    <integer name="com_vk_sdk_AppId">1234</integer>
+    <string name="login">Войти</string>
+    <string name="logout">Выйти</string>
+
+    <string name="connection_status">Connection status</string>
+    <string name="send_to_device">Send</string>
+    <string name="device_request">Write request</string>
+
+    <!-- Ble scan error messages -->
+    <string name="error_bluetooth_not_available">Bluetooth is not available</string>
+    <string name="error_bluetooth_disabled">Enable bluetooth and try again</string>
+    <string name="error_location_permission_missing">On Android 6.0 location permission is required. Please enable it in phone settings</string>
+    <string name="error_location_services_disabled">Location services need to be enabled on Android 6.0</string>
+    <string name="error_scan_failed_already_started">Scan with the same filters is already started</string>
+    <string name="error_scan_failed_application_registration_failed">Failed to register application for bluetooth scan</string>
+    <string name="error_scan_failed_feature_unsupported">Scan with specified parameters is not supported</string>
+    <string name="error_scan_failed_internal_error">Scan failed due to internal error</string>
+    <string name="error_scan_failed_out_of_hardware_resources">Scan cannot start due to limited hardware resources</string>
+    <string name="error_undocumented_scan_throttle">Android 7+ does not allow more scans.</string>
+    <string name="error_undocumented_scan_throttle_retry">Try in %d seconds</string>
+    <string name="error_bluetooth_cannot_start">Unable to start scanning</string>
+    <string name="error_unknown_error">Unknown error</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="scan_QR">Scan QR</string>
+    <string name="open">Открыть</string>
+    <string name="close">Закрыть</string>
+    <string name="sync">"Синхронизовать"</string>
+    <string name="input_ID">Ввести вручную</string>
+    <string name="incorrect_lock_ID">"Incorrect lockInfo ID"</string>
+    <string name="Sum">Сумма</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="web_site">sharing.tzar.su</string>
+    <string name="supportTelegram">t.me/andrshab</string>
+    <string name="supportPhone">+7(952)273 44 96</string>
+
+    <string name="tips">1. Если приложение не реагирует на нажатие кнопки на замке, попробуйте перезапустить блютуз или поднести телефон поближе к замку.\n\n2. Замок, после нажатия на нем кнопки, подключается к телефону за 3-5 секунд. \n\n3. Убедитесь, что отсканировали QR перед тем, как нажимать кнопку на замке. \n\n4. Кнопку на замке нужно зажимать на 2 сек.</string>
+    <string name="tip_make_bike_photo">Сфотографируйте как пристегнут велосипед</string>
+    <string name="OK">Ок</string>
+    <string name="CANCEL">Отмена</string>
+    <string name="warn_imgfile_not_exist">Картинка не существует</string>
+    <string name="warn_unsuccess_make_photo">Не удалось сделать фото</string>
+    <string name="tag_fileprovider">su.tzar.borovovaleksandr.tzar.fileprovider</string>
+    <string name="tag_prefernces_name">su.tzar.borovovaleksandr.tzar</string>
+    <string name="tag_token">token</string>
+    <string name="tag_refresh_token">refreshToken</string>
+    <string name="tag_vk_user_id">vkUserID</string>
+    <string name="tag_currency_name">RUB</string>
+    <string name="warn_vk_auth_failed">VK authorization failed. Check your credentials.</string>
+    <string name="title_enter_lock_id">Введите ID замка</string>
+    <string name="tip_press_lock_btn">НАЖМИТЕ НА 2 СЕК КНОПКУ ЗАМКА #</string>
+    <string name="warn_scan_failed">BLUETOOTH SCAN FAILED</string>
+    <string name="warn_wrong_vk_user_id">Something wrong with vkUserID</string>
+    <string name="title_signed_in">Вы вошли как id</string>
+    <string name="title_please_sign_in">Пожалуйста, войдите через ВК</string>
+    <string name="pay_title">Велошеринг</string>
+    <string name="pay_description">Пополнение баланса для пользования велошерингом</string>
+    <string name="yandex_sdk_token">live_XXX</string>
+    <string name="yandex_shop_id">XXX</string>
+    <string name="title_balance">БАЛАНС:</string>
+    <string name="warn_check_internet_connectio">Проверьте интернет</string>
+    <string name="tip_please_sign_in">Пожалуйста, войдите в приложение</string>
+    <string name="warn_ids_not_match">ID подключенного замка не совпадает с отсканированным QR</string>
+    <string name="tip_lock_is_opened">Замок открыт. Чтобы вытащить дугу, потяните за кольцо.</string>
+    <string name="tip_you_can_close_lock">МОЖНО ЗАКРЫТЬ</string>
+    <string name="title_close">ЗАКРЫТЬ</string>
+    <string name="tip_you_can_open_lock">МОЖНО ОТКРЫТЬ</string>
+    <string name="title_open">ОТКРЫТЬ</string>
+    <string name="tip_gps_location_too_old">GPS позиция, которую помнит ваш телефон слишком старая. Приложение только что попыталось обновить ее. Пожалуйста, попробуйте выполнить предыдущее действие снова</string>
+    <string name="tip_press_next_if_ready">Если вы уже закончили кататься, пристегнули велосипед на замок и готовы это сфотографировать, нажмите ДАЛЕЕ</string>
+    <string name="title_next">ДАЛЕЕ</string>
+    <string name="title_id_number">ID#</string>
+    <string name="title_disconnected">НЕ ПОДКЛЮЧЕН</string>
+    <string name="tip_enable_bluetooth">Включите bluetooth</string>
+    <string name="tip_enable_gps">Включите GPS</string>
+    <string name="warn_no_location_permission">No location permission</string>
+    <string name="tip_thanks_for_ride">Спасибо за поездку</string>
+    <string name="warn_incorrect_lock_id">Неверный ID замка</string>
+    <string name="warn_jwt">Cannot authorize. Check internet connection</string>
+    <string name="warn_open_packet">Cannot get open packet. Check internet connection</string>
+    <string name="warn_close_packet">Cannot send close packet. Check internet connection</string>
+    <string name="warn_lock_state">Cannot get lock state. Check internet connection</string>
+    <string name="warn_user_data">Cannot get user data. Check internet connection</string>
+    <string name="warn_3DS">Cannot get 3DS URL.Check internet connection</string>
+    <string name="tip_scan_QR">Отсканируйте QR код на торце замка</string>
+    <string name="warn_firebasetoken">Cannot send firebasetoken. Check internet connection</string>
+    <string name="tag_info_page">infoPage</string>
+    <string name="title_sum">Пополнение баланса, RUB</string>
+    <string name="title_phone">Номер телефона</string>
+    <string name="tag_last_sum">lastSum</string>
+    <string name="warn_sum_input">Минимальная сумма 200RUB</string>
+    <string name="tag_last_phone">lastPhone</string>
+    <string name="warn_phone_input">Введите телефон в формате +71234567890</string>
+    <string name="tip_google_pay">Успешно. Баланс в приложении может измениться не сразу.</string>
+    <string name="tip_scooter_menu">Если пристегнули самокат и ГОТОВЫ это сфотографировать, нажмите \"Закончить поездку\"</string>
+    <string name="tag_pullout_cable">Извлечь трос</string>
+    <string name="tag_end_ride">Закончить поездку</string>
+    <string name="title_reopen">"ОТКРЫТЬ ЕЩЕ РАЗ"</string>
+    <string name="info_url">https://sharing.tzar.su/api/info/</string>
+
+</resources>

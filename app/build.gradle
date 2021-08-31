@@ -1,0 +1,86 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+        applicationId "su.tzar.borovovaleksandr.tzar"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 47
+        versionName "1.0.33"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+}
+
+repositories {
+    maven { url 'https://dl.bintray.com/yoomoney/maven' }
+    mavenCentral()
+}
+
+dependencies {
+    //MultiDex
+    implementation 'androidx.multidex:multidex:2.0.1'
+    //Firebase
+    implementation 'com.google.firebase:firebase-crashlytics:17.4.1'
+    implementation 'com.google.firebase:firebase-messaging:20.1.2'
+    //Material Design
+    implementation 'com.google.android.material:material:1.2.0-alpha05'
+    //GPS
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    //YOO KASSA SDK
+    implementation 'ru.yoo.sdk.kassa.payments:yookassa-android-sdk:5.1.2'
+    implementation fileTree(dir: "libs", include: ["*.aar"])
+    //implementation 'com.yandex.money:checkout:3.0.3'
+    //VK SDK
+    implementation 'com.vk:androidsdk:2.1.1'
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+    //QR
+    implementation 'com.journeyapps:zxing-android-embedded:3.0.2@aar'
+    implementation 'com.google.zxing:core:3.2.0'
+    //ble
+    implementation 'com.jakewharton.rx2:replaying-share:2.2.0'
+    def dagger2Version = '2.15'
+    implementation "com.google.dagger:dagger:$dagger2Version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger2Version"
+    implementation "com.google.dagger:dagger-android:$dagger2Version"
+    implementation "com.google.dagger:dagger-android-support:$dagger2Version"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$dagger2Version"
+    implementation "io.reactivex.rxjava2:rxjava:2.0.1"
+    implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
+    implementation "com.polidea.rxandroidble2:rxandroidble:1.10.1"
+    //map
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    //basics
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.vectordrawable:vectordrawable:1.0.1'
+    implementation 'androidx.navigation:navigation-fragment:2.0.0'
+    implementation 'androidx.navigation:navigation-ui:2.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+}

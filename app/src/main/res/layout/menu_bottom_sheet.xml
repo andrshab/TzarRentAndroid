@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/menu_bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@drawable/menu_rounded_bottom_sheet"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:clickable="true"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="200dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="?android:attr/textColorPrimary"
+        android:text="@string/tip_scooter_menu">
+    </TextView>
+    <Button
+        android:id="@+id/pullout_cable_btn"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tag_pullout_cable">
+
+    </Button>
+    <Button
+        android:id="@+id/end_ride_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tag_end_ride">
+
+    </Button>
+
+
+
+</LinearLayout>
+
