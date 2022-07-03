@@ -1,6 +1,8 @@
 build
+release
 .gradle
 .idea
 local.properties
 app/google-services.json
 app/src/main/res/values/strings_local.xml
+tzar_keystore

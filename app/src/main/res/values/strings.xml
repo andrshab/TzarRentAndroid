@@ -93,7 +93,8 @@
     <string name="title_sum">Пополнение баланса, RUB</string>
     <string name="title_phone">Номер телефона</string>
     <string name="tag_last_sum">lastSum</string>
-    <string name="warn_sum_input">Минимальная сумма 200RUB</string>
+    <integer name="min_sum">400</integer>
+    <string name="warn_sum_input">Минимальная сумма %dRUB</string>
     <string name="tag_last_phone">lastPhone</string>
     <string name="warn_phone_input">Введите телефон в формате +71234567890</string>
     <string name="tip_google_pay">Успешно. Баланс в приложении может измениться не сразу.</string>

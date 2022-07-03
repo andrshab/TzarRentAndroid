@@ -3,7 +3,6 @@ package su.tzar.borovovaleksandr.tzar.fragment;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -11,25 +10,20 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
-import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
-
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import su.tzar.borovovaleksandr.tzar.App;
 import su.tzar.borovovaleksandr.tzar.R;
 import su.tzar.borovovaleksandr.tzar.activity.BikePhotoActivity;
@@ -68,14 +62,11 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.polidea.rxandroidble2.RxBleConnection;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
 import javax.inject.Inject;
 
-import static android.content.Context.MODE_PRIVATE;
 import static su.tzar.borovovaleksandr.tzar.ble.BleConnection.KEY_UUID;
 
 
@@ -628,20 +619,29 @@ public class MapFragment extends Fragment implements
         }
     }
 
+    private void showMyLocationOnMap() {
+        enableMyLocation();
+        gps.getLastLocation(location -> {
+            CameraPosition cameraPosition = new CameraPosition.Builder()
+                    .target(new LatLng(location.getLatitude(), location.getLongitude()))
+                    .zoom(13)
+                    .build();
+            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+        });
+    }
+
+    public void onLocationPermissionsGranted() {
+        showMyLocationOnMap();
+    }
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         mMap.getUiSettings().setMapToolbarEnabled(false);
-        CameraPosition cameraPosition = new CameraPosition.Builder()
-                .target(new LatLng(60.054412, 30.433245))
-                .zoom(13)
-                .build();
-        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
         mMap.setOnCameraIdleListener(this);
         mMap.setOnMarkerClickListener(this);
-
         markers.clear();
-        enableMyLocation();
+        showMyLocationOnMap();
 
         NetworkService.getZones(getContext(), response -> {
             for(List<Point> zone: response.getZones()) {

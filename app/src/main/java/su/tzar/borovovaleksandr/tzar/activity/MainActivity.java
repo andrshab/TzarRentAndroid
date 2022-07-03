@@ -1,7 +1,9 @@
 package su.tzar.borovovaleksandr.tzar.activity;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import ru.yoomoney.sdk.kassa.payments.Checkout;
@@ -24,14 +26,17 @@ import su.tzar.borovovaleksandr.tzar.network.AuthRequest;
 import su.tzar.borovovaleksandr.tzar.network.FirebaseToken;
 import su.tzar.borovovaleksandr.tzar.network.NetworkService;
 import su.tzar.borovovaleksandr.tzar.network.PaymentToken;
+
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.vk.api.sdk.VK;
 import com.vk.api.sdk.auth.VKAccessToken;
 import com.vk.api.sdk.auth.VKAuthCallback;
-import com.vk.api.sdk.utils.VKUtils;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.Currency;
 import java.util.HashSet;
 import java.util.Set;
@@ -68,6 +73,15 @@ public class MainActivity extends AppCompatActivity {
         App.getComponent().injectMainActivity(this);
         ble.registerBleStateReciever(getApplicationContext());
 
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        int locationPermissionIndex = Arrays.asList(permissions).indexOf(Manifest.permission.ACCESS_FINE_LOCATION);
+        if (locationPermissionIndex >= 0 && grantResults[locationPermissionIndex] == PackageManager.PERMISSION_GRANTED) {
+            mMapFragment.onLocationPermissionsGranted();
+        }
     }
 
     @Override
