@@ -85,7 +85,7 @@ public class HomeFragment extends Fragment {
         phoneEditText.setOnClickListener(onPhoneClickListener);
         if(getContext() != null) {
             SharedPreferences sPrefs = getContext().getSharedPreferences(getString(R.string.tag_prefernces_name), MODE_PRIVATE);
-            String lastSum = sPrefs.getString(getContext().getString(R.string.tag_last_sum), "200");
+            String lastSum = sPrefs.getString(getContext().getString(R.string.tag_last_sum), String.valueOf(requireContext().getResources().getInteger(R.integer.min_sum)));
             sumEditText.setText(lastSum);
             String lastPhone = sPrefs.getString(getContext().getString(R.string.tag_last_phone), "+7");
             phoneEditText.setText(lastPhone);
@@ -170,9 +170,9 @@ public class HomeFragment extends Fragment {
 
 
     private void onPayClick() {
-        if(getSum() < 200) {
+        if(getSum() < requireContext().getResources().getInteger(R.integer.min_sum)) {
             if(getContext() != null) {
-                sumTextLayout.setError(getContext().getString(R.string.warn_sum_input));
+                sumTextLayout.setError(getContext().getString(R.string.warn_sum_input, requireContext().getResources().getInteger(R.integer.min_sum)));
             }
         } else if(getPhone() == 0) {
             if(getContext() != null) {

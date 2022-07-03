@@ -15,7 +15,7 @@ public class Permissions {
         // Utility class
     }
 
-    private static final int REQUEST_PERMISSIONS = 9358;
+    public static final int REQUEST_PERMISSIONS = 9358;
 
     public static boolean isPermissionsGranted(final Context context) {
         if (Build.VERSION.SDK_INT < 23 /* Build.VERSION_CODES.M */) {

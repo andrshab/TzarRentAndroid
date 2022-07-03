@@ -4,8 +4,6 @@
     <string name="title_map">Map</string>
     <string name="title_ride">Ride</string>
     <string name="title_pay">Пополнить</string>
-
-    <integer name="com_vk_sdk_AppId">1234</integer>
     <string name="login">Войти</string>
     <string name="logout">Выйти</string>
 
@@ -64,8 +62,6 @@
     <string name="title_please_sign_in">Пожалуйста, войдите через ВК</string>
     <string name="pay_title">Велошеринг</string>
     <string name="pay_description">Пополнение баланса для пользования велошерингом</string>
-    <string name="yandex_sdk_token">live_XXX</string>
-    <string name="yandex_shop_id">XXX</string>
     <string name="title_balance">БАЛАНС:</string>
     <string name="warn_check_internet_connectio">Проверьте интернет</string>
     <string name="tip_please_sign_in">Пожалуйста, войдите в приложение</string>
@@ -97,7 +93,8 @@
     <string name="title_sum">Пополнение баланса, RUB</string>
     <string name="title_phone">Номер телефона</string>
     <string name="tag_last_sum">lastSum</string>
-    <string name="warn_sum_input">Минимальная сумма 200RUB</string>
+    <integer name="min_sum">400</integer>
+    <string name="warn_sum_input">Минимальная сумма %dRUB</string>
     <string name="tag_last_phone">lastPhone</string>
     <string name="warn_phone_input">Введите телефон в формате +71234567890</string>
     <string name="tip_google_pay">Успешно. Баланс в приложении может измениться не сразу.</string>
