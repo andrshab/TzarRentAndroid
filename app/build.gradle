@@ -3,16 +3,16 @@ apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion "29.0.2"
     defaultConfig {
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         applicationId "su.tzar.borovovaleksandr.tzar"
         minSdkVersion 21
-        targetSdkVersion 29
-        versionCode 47
-        versionName "1.0.33"
+        targetSdkVersion 30
+        versionCode 49
+        versionName "1.0.35"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
