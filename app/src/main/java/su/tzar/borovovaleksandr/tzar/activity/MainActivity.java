@@ -4,7 +4,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-
+import ru.yoomoney.sdk.kassa.payments.Checkout;
+import ru.yoomoney.sdk.kassa.payments.TokenizationResult;
+import ru.yoomoney.sdk.kassa.payments.checkoutParameters.Amount;
+import ru.yoomoney.sdk.kassa.payments.checkoutParameters.PaymentMethodType;
+import ru.yoomoney.sdk.kassa.payments.checkoutParameters.PaymentParameters;
+import ru.yoomoney.sdk.kassa.payments.checkoutParameters.SavePaymentMethod;
+import ru.yoomoney.sdk.kassa.payments.checkoutParameters.TestParameters;
 import su.tzar.borovovaleksandr.tzar.App;
 import su.tzar.borovovaleksandr.tzar.R;
 import su.tzar.borovovaleksandr.tzar.ble.Ble;
@@ -18,32 +24,18 @@ import su.tzar.borovovaleksandr.tzar.network.AuthRequest;
 import su.tzar.borovovaleksandr.tzar.network.FirebaseToken;
 import su.tzar.borovovaleksandr.tzar.network.NetworkService;
 import su.tzar.borovovaleksandr.tzar.network.PaymentToken;
-
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.vk.api.sdk.VK;
 import com.vk.api.sdk.auth.VKAccessToken;
 import com.vk.api.sdk.auth.VKAuthCallback;
 import com.vk.api.sdk.utils.VKUtils;
-
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
-
 import java.math.BigDecimal;
 import java.util.Currency;
 import java.util.HashSet;
 import java.util.Set;
-
 import javax.inject.Inject;
-
-import ru.yoo.sdk.kassa.payments.TokenizationResult;
-import ru.yoo.sdk.kassa.payments.Checkout;
-import ru.yoo.sdk.kassa.payments.checkoutParameters.Amount;
-import ru.yoo.sdk.kassa.payments.checkoutParameters.PaymentMethodType;
-import ru.yoo.sdk.kassa.payments.checkoutParameters.PaymentParameters;
-import ru.yoo.sdk.kassa.payments.checkoutParameters.SavePaymentMethod;
-import ru.yoo.sdk.kassa.payments.checkoutParameters.TestParameters;
-
 import static su.tzar.borovovaleksandr.tzar.helper.Codes.REQUEST_3DS;
 import static su.tzar.borovovaleksandr.tzar.helper.Codes.REQUEST_CODE_TOKENIZE;
 

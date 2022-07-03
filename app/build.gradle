@@ -25,10 +25,12 @@ android {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
     }
+    packagingOptions {
+        exclude "META-INF/*"
+    }
 }
 
 repositories {
-    maven { url 'https://dl.bintray.com/yoomoney/maven' }
     mavenCentral()
 }
 
@@ -43,9 +45,7 @@ dependencies {
     //GPS
     implementation 'com.google.android.gms:play-services-location:17.0.0'
     //YOO KASSA SDK
-    implementation 'ru.yoo.sdk.kassa.payments:yookassa-android-sdk:5.1.2'
-    implementation fileTree(dir: "libs", include: ["*.aar"])
-    //implementation 'com.yandex.money:checkout:3.0.3'
+    implementation 'ru.yoomoney.sdk.kassa.payments:yookassa-android-sdk:6.5.0'
     //VK SDK
     implementation 'com.vk:androidsdk:2.1.1'
     //Retrofit

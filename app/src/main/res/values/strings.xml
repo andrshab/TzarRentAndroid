@@ -4,8 +4,6 @@
     <string name="title_map">Map</string>
     <string name="title_ride">Ride</string>
     <string name="title_pay">Пополнить</string>
-
-    <integer name="com_vk_sdk_AppId">1234</integer>
     <string name="login">Войти</string>
     <string name="logout">Выйти</string>
 
@@ -64,8 +62,6 @@
     <string name="title_please_sign_in">Пожалуйста, войдите через ВК</string>
     <string name="pay_title">Велошеринг</string>
     <string name="pay_description">Пополнение баланса для пользования велошерингом</string>
-    <string name="yandex_sdk_token">live_XXX</string>
-    <string name="yandex_shop_id">XXX</string>
     <string name="title_balance">БАЛАНС:</string>
     <string name="warn_check_internet_connectio">Проверьте интернет</string>
     <string name="tip_please_sign_in">Пожалуйста, войдите в приложение</string>
