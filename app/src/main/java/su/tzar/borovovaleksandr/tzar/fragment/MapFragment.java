@@ -37,6 +37,7 @@ import su.tzar.borovovaleksandr.tzar.ble.HexString;
 import su.tzar.borovovaleksandr.tzar.helper.Codes;
 import su.tzar.borovovaleksandr.tzar.helper.GPS;
 import su.tzar.borovovaleksandr.tzar.helper.InfoMessage;
+import su.tzar.borovovaleksandr.tzar.helper.Permissions;
 import su.tzar.borovovaleksandr.tzar.helper.RideHandler;
 import su.tzar.borovovaleksandr.tzar.lock.Lock;
 import su.tzar.borovovaleksandr.tzar.lock.LockHandler;
@@ -201,24 +202,28 @@ public class MapFragment extends Fragment implements
 
     private void onScanQRClick(Context context) {
         //check BLE, GPS, INTERNET enabled
-        if (Auth.isAuthorized(context)) {
-            new InternetCheck(isInternetAvailable -> {
-                if (!isInternetAvailable) {
-                    new InfoMessage(context).show(getString(R.string.warn_check_internet_connectio));
-                    return;
-                } else {
-                    if (!(checkPhoneFunctions(getContext()))) {
+        if (Permissions.isPermissionsGranted(requireContext())) {
+            if (Auth.isAuthorized(context)) {
+                new InternetCheck(isInternetAvailable -> {
+                    if (!isInternetAvailable) {
+                        new InfoMessage(context).show(getString(R.string.warn_check_internet_connectio));
                         return;
+                    } else {
+                        if (!(checkPhoneFunctions(getContext()))) {
+                            return;
+                        }
+                        IntentIntegrator
+                                .forSupportFragment(this)
+                                .setOrientationLocked(false)
+                                .setCaptureActivity(QRScannerActivity.class)
+                                .initiateScan();
                     }
-                    IntentIntegrator
-                            .forSupportFragment(this)
-                            .setOrientationLocked(false)
-                            .setCaptureActivity(QRScannerActivity.class)
-                            .initiateScan();
-                }
-            });
+                });
+            } else {
+                new InfoMessage(getActivity()).show(getString(R.string.tip_please_sign_in));
+            }
         } else {
-            new InfoMessage(getActivity()).show(getString(R.string.tip_please_sign_in));
+            Permissions.requestPermissions(requireActivity());
         }
     }
 
