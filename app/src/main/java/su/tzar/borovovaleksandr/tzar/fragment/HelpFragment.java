@@ -3,11 +3,11 @@ package su.tzar.borovovaleksandr.tzar.fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,6 +44,19 @@ public class HelpFragment extends Fragment {
                 view.loadUrl(url);
                 return false;
             }
+        });
+
+        infoWv.setOnKeyListener((v, keyCode, event) -> {
+            if (event.getAction() == KeyEvent.ACTION_DOWN) {
+                WebView webView = (WebView) v;
+                if (keyCode == KeyEvent.KEYCODE_BACK) {
+                    if (webView.canGoBack()) {
+                        webView.goBack();
+                        return true;
+                    }
+                }
+            }
+            return false;
         });
 
         return root;
