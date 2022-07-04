@@ -60,8 +60,8 @@
     <string name="warn_wrong_vk_user_id">Something wrong with vkUserID</string>
     <string name="title_signed_in">Вы вошли как id</string>
     <string name="title_please_sign_in">Пожалуйста, войдите через ВК</string>
-    <string name="pay_title">Велошеринг</string>
-    <string name="pay_description">Пополнение баланса для пользования велошерингом</string>
+    <string name="pay_title">Шеринг</string>
+    <string name="pay_description">Пополнение баланса для пользования шерингом</string>
     <string name="title_balance">БАЛАНС:</string>
     <string name="warn_check_internet_connectio">Проверьте интернет</string>
     <string name="tip_please_sign_in">Пожалуйста, войдите в приложение</string>
