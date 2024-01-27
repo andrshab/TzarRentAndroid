@@ -54,15 +54,18 @@
         <activity
             android:name="su.tzar.borovovaleksandr.tzar.activity.QRScannerActivity"
             android:screenOrientation="portrait"
+            android:exported="true"
             tools:replace="screenOrientation" />
         <activity
             android:name="su.tzar.borovovaleksandr.tzar.activity.BikePhotoActivity"
             android:screenOrientation="portrait"
+            android:exported="true"
             tools:replace="screenOrientation" />
         <activity
             android:windowSoftInputMode="stateAlwaysHidden"
             android:name="su.tzar.borovovaleksandr.tzar.activity.MainActivity"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -70,7 +73,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name="su.tzar.borovovaleksandr.tzar.helper.MyFirebaseMessagingService">
+        <service android:name="su.tzar.borovovaleksandr.tzar.helper.MyFirebaseMessagingService"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
